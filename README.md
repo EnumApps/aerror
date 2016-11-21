@@ -1,5 +1,6 @@
 # aerror
 Traceable Error for Golang
+[![GoDoc](https://godoc.org/github.com/EnumApps/aerror?status.svg)](http://godoc.org/github.com/EnumApps/aerror)
 
 #usage 
 
