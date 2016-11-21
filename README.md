@@ -4,18 +4,26 @@ Traceable Error for Golang
 #usage 
 
 #on error
-	if err != nil {
-    return aerror.WrapError(err)
-  }
+      if err != nil {
+        return aerror.WrapError(err)
+      }
 		
 #on log/output
-  fmt.Println(err) // use as if normal error
+      fmt.Println(err) // use as a normal error , it will always compatable
 
-  switch a:= err.(type){
-    case *aerror.AError:
-      fmt.Println(a.Trace)
-      break
-    default:
-      fmt.Println(err)
-      break
-  }
+      switch a:= err.(type){
+        case *aerror.AError:
+          fmt.Println(a.Trace)
+          break
+        default:
+          fmt.Println(err)
+          break
+      }
+
+#use a premade tool
+
+      import "github.com/EnumApps/aerror/debugutil"
+
+      if err != nil {
+        debugutil.PrintTrace(err)
+      }

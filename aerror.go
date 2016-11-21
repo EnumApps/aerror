@@ -39,7 +39,5 @@ func WrapError(oe error) *AError {
 }
 
 func New(msg string) *AError {
-
 	return &AError{errors.New(msg), TraceNow(2)}
-
 }
